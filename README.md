@@ -174,3 +174,76 @@ Words like `execute`, `validate`, `state` are already known to the model. Hashin
 - System re-bootstraps and sends `. corr last -> protocol strict minimal`
 - Protocol version is hashed from the bootstrap string and synced via `. vers :v=<hash>`
 - Dictionary and reference maps can be synced between agents via `. data :dict={}` and `. data :refs={}`
+
+## TODO
+
+### Core UX / Dashboard
+- [ ] Build web based UI dashboard (task view, logs, memory, live state)
+- [ ] Add real-time pipeline visualization (compression → execution → scoring)
+- [ ] Display reference map ($N) and predicate dictionary growth
+- [ ] Add replay/debug mode for past executions
+- [ ] Add interactive AST viewer
+- [ ] Add manual override / step-through execution controls
+
+### Model Integrations
+- [ ] Add local model support (llama.cpp / GGUF / vLLM)
+- [ ] Implement model router (choose best model per task type)
+- [ ] Add fallback chain (local → remote → retry logic)
+- [ ] Optimize prompt formatting for Interlang compression
+- [ ] Add streaming responses support
+
+### External AI Connections
+- [ ] Integrate Claude (Anthropic API)
+- [ ] Integrate OpenClaude / OpenClaw-style local Claude wrappers
+- [ ] Add OpenAI / ChatGPT API support (non-UI)
+- [ ] Add multi-model consensus / voting system
+- [ ] Add cost + latency tracking per model
+
+### Execution + Runtime
+- [ ] Sandbox execution engine (isolate unsafe operations)
+- [ ] Add deterministic execution mode
+- [ ] Add distributed execution (multi-node runners)
+- [ ] Implement state snapshot + rollback system
+- [ ] Add task queue with priority + scheduling
+
+### Compression / Interlang Evolution
+- [ ] Improve PatternOptimizer (deeper structural pattern detection)
+- [ ] Add dynamic predicate merging / pruning
+- [ ] Optimize reference reuse strategy
+- [ ] Add adaptive compression thresholds
+- [ ] Track compression ratio over time (metrics dashboard)
+
+### Reinforcement + Learning
+- [ ] Improve scoring heuristics (semantic + structural)
+- [ ] Add long-term memory weighting
+- [ ] Implement auto-tuning of compression strategies
+- [ ] Add failure clustering + root cause analysis
+- [ ] Enable self-generated optimization goals
+
+### Networking / Bridge Layer
+- [ ] Improve ChatGPT bridge reliability (CDP + fallback)
+- [ ] Add WebSocket-based bridge
+- [ ] Add headless browser pool
+- [ ] Add rate limiting + retry backoff
+- [ ] Support multiple concurrent sessions
+
+### Developer Experience
+- [ ] CLI tool for running pipelines and tests
+- [ ] Config system (YAML/JSON for models, thresholds, routing)
+- [ ] Add logging levels + structured logs
+- [ ] Add plugin system for new optimizers/parsers
+- [ ] Improve test coverage and test organization
+
+### Security
+- [ ] Add permission system for execution engine
+- [ ] Detect and block unsafe generated code
+- [ ] Add audit logs for all executions
+- [ ] Validate inputs before execution
+
+### Future / Experimental
+- [ ] Multi-agent coordination layer
+- [ ] Autonomous goal generation
+- [ ] Self-evolving protocol rules
+- [ ] Cross-session shared memory
+- [ ] Interlang → natural language reverse translator (explainability)
+- [ ] Visual programming layer (drag-and-drop pipeline builder)
