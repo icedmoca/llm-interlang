@@ -1,0 +1,1 @@
+chromium --remote-debugging-port=9222 https://chatgpt.com
