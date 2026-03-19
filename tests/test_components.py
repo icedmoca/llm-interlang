@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Test AST parser and compression scorer without requiring bridge connection"""
 
-from interlang_ast import InterlangParser
-from compression import CompressionScorer
+from core.interlang_ast import InterlangParser
+from core.compression import CompressionScorer
 import json
 
 print("Testing AST Parser...\n")

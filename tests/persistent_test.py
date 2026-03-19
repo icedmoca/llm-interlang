@@ -1,4 +1,4 @@
-from learning import PredicateLearner
+from core.learning import PredicateLearner
 import os
 
 # Clean up any existing map for clean test

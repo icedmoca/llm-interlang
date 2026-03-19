@@ -1,4 +1,4 @@
-from router import ModelRouter
+from core.router import ModelRouter
 
 router = ModelRouter()
 bridge = router.models["chatgpt"]

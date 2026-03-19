@@ -1,4 +1,4 @@
-from router import ModelRouter
+from core.router import ModelRouter
 
 print("\n=== LLM-INTERLANG FULL VALIDATION ===\n")
 

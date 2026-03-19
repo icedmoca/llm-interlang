@@ -1,5 +1,5 @@
-from bridge_protocol import InterlangBridge
-from batch_optimizer import BatchOptimizer
+from bridge.bridge_protocol import InterlangBridge
+from runners.batch_optimizer import BatchOptimizer
 
 class ModelRouter:
     def __init__(self):

@@ -1,4 +1,4 @@
-from bridge_protocol import InterlangBridge
+from bridge.bridge_protocol import InterlangBridge
 
 bridge = InterlangBridge(mode="cdp", wait=30)
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Test integration without requiring bridge connection"""
 
-from bridge_protocol import InterlangBridge
-from interlang_ast import InterlangParser
-from executor import ExecutionEngine
-from learning import PredicateLearner
-from reinforcement import ReinforcementLoop
+from bridge.bridge_protocol import InterlangBridge
+from core.interlang_ast import InterlangParser
+from core.executor import ExecutionEngine
+from core.learning import PredicateLearner
+from core.reinforcement import ReinforcementLoop
 import json
 
 print("=== INTEGRATION TEST (No Bridge Required) ===\n")

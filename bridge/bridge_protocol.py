@@ -3,16 +3,16 @@ import time
 import hashlib
 from typing import List, Dict, Optional
 
-from chatgpt_bridge import xdotool_send, cdp_send
-from interlang_ast import InterlangParser
-from compression import CompressionScorer
-from executor import ExecutionEngine
-from learning import PredicateLearner
-from reinforcement import ReinforcementLoop
-from protocol_bootstrap import BOOTSTRAP_PROMPT, INTERLANG_BOOTSTRAP, PROTOCOL_VERSION, REPEAT_BOOTSTRAP
-from translator import InterlangTranslator
-from reference import ReferenceCompressor
-from pattern_optimizer import PatternOptimizer
+from bridge.chatgpt_bridge import xdotool_send, cdp_send
+from core.interlang_ast import InterlangParser
+from core.compression import CompressionScorer
+from core.executor import ExecutionEngine
+from core.learning import PredicateLearner
+from core.reinforcement import ReinforcementLoop
+from runners.protocol_bootstrap import BOOTSTRAP_PROMPT, INTERLANG_BOOTSTRAP, PROTOCOL_VERSION, REPEAT_BOOTSTRAP
+from core.translator import InterlangTranslator
+from core.reference import ReferenceCompressor
+from core.pattern_optimizer import PatternOptimizer
 
 
 class InterlangBridge:
@@ -39,12 +39,12 @@ class InterlangBridge:
     def send(self, message: str) -> Dict:
         if not self.bootstrapped:
             self.bootstrap()
-        
+
         # Proactive drift prevention - catch English before sending
         if " " in message and not message.startswith("."):
             # Convert English to protocol correction format
             message = ". corr " + message
-        
+
         message = self._enforce_protocol(message)
 
         # prevent accidental english
@@ -84,7 +84,7 @@ class InterlangBridge:
             execution = None
             if "ast" in parsed and isinstance(parsed["ast"], dict):
                 execution = self.executor.execute(parsed["ast"])
-                
+
                 # Auto-use stored definitions in future messages
                 if execution.get("status") == "defined":
                     # Definition stored, will be available for future use
@@ -95,7 +95,7 @@ class InterlangBridge:
             # Receive dictionary sync
             if parsed.get("execution") and "data" in parsed["execution"]:
                 data = parsed["execution"]["data"]
-                
+
                 if isinstance(data, list):
                     for item in data:
                         if isinstance(item, str) and "dict=" in item:
@@ -135,7 +135,7 @@ class InterlangBridge:
                 # auto version sync on first valid response
                 if attempt == 0:
                     self._dispatch(self.version_sync())
-                
+
                 # reinforcement tracking
                 try:
                     english = self.translator.to_english(self.refs.expand(sent_message))
