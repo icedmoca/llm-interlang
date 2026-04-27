@@ -2,6 +2,12 @@
 
 > Communication layer that replaces natural language with symbolic instructions to **reduce token usage**. By compressing messages, reusing references, and optimizing patterns, it **lowers API costs**, **speeds up responses**, and **increases context efficiency**. Designed for AI agents, multi-model pipelines, and distributed systems that need fast, reliable coordination.
 
+---
+> 
+> ### [https://deepwiki.com/icedmoca/llm-interlang](https://deepwiki.com/icedmoca/llm-interlang)
+
+---
+
 ### Goal
 ```
                          ┌──────────────────────────────┐
