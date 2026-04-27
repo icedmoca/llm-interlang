@@ -5,7 +5,9 @@
 ---
 > 
 > ### [https://deepwiki.com/icedmoca/llm-interlang](https://deepwiki.com/icedmoca/llm-interlang)
-
+>
+> * ### **`Question:`**  *`wait so say over 1000 runs how many tokens might i save?`*
+> * ***`Answer`*** `Based on the compression ratios documented in the system, over 1000 runs you could save approximately 60-80% of tokens (3× to 5× reduction) compared to natural language, with efficiency improving as the system learns patterns `
 ---
 
 ### Goal
