@@ -1,4 +1,6 @@
-# llm-interlang
+<p align="center">
+  <img src="assets/interlang.png" alt="interlang" width="1720">
+</p>
 
 > Communication layer that replaces natural language with symbolic instructions to **reduce token usage**. By compressing messages, reusing references, and optimizing patterns, it **lowers API costs**, **speeds up responses**, and **increases context efficiency**. Designed for AI agents, multi-model pipelines, and distributed systems that need fast, reliable coordination.
 
